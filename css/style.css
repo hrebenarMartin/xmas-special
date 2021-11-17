@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root {
+    --c-lighter: #4d4d85;
+    --c-dark: #242452;
+    --c-darker: #181834;
+    --c-tree-1: #25543f;
+    --c-tree-2: #224f3b;
+    --c-tree-3: #1e4434;
+    --c-tree-4: #1b3f30;
+    --c-trunk-1: #3a2c1b;
+    --c-trunk-2: #332618;
+    --c-deco-blue: #0a53be;
+    --c-deco-red: #b4323f;
+    --c-deco-lime: #29c038;
+    --c-deco-yellow: #dac221;
+    --c-deco-purple: #8832e3;
+    --c-star: #ffd600;
+    --c-gift-box: #9a9999;
+    --c-gift-wrapping: #797979;
+    --c-gift-ribbon: #c98443;
+
+    --screen-size-coeficient: 0.6;
+
+    --d-tree-increment: calc(var(--screen-size-coeficient) * 80px);
+
+    --d-tree-1: calc(var(--screen-size-coeficient) * 120px);
+    --d-tree-2: calc(var(--d-tree-1) + var(--d-tree-increment));
+    --d-tree-3: calc(var(--d-tree-2) + var(--d-tree-increment));
+    --d-tree-4: calc(var(--d-tree-3) + var(--d-tree-increment));
+    --d-deco: calc(var(--screen-size-coeficient) * 20px);
+
+    --top-tree: 160px;
+    --top-star: 100px;
+    --top-card: 40px;
+}
+
+body {
+    background-color: var(--c-dark);
+    display: flex;
+    font-size: 10px;
+}
+
+#xmas-scene {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 576px;
+    justify-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#xmas-scene .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    z-index: 1;
+}
+
+#xmas-scene .title .too-early {
+    font-size: 1.5rem;
+    display: none;
+}
+
+#xmas-scene .title .xmas-title {
+    font-size: 2.5rem;
+    display: none;
+}
+
+#xmas-scene .xmas-tree {
+    width: 100%;
+    position: relative;
+}
+
+/* TREE TOP */
+#xmas-scene .xmas-tree .tree-top {
+    display: none;
+}
+
+#xmas-scene .xmas-tree .tree-top .star {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#xmas-scene .xmas-tree .tree-top .star:before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: var(--top-star);
+    z-index: 1002;
+    background: var(--c-star);
+    box-shadow: 0 0 5px 0 var(--c-star),
+    0 0 10px 0 var(--c-star);
+}
+
+#xmas-scene .xmas-tree .tree-top .star:after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: var(--top-star);
+    z-index: 1002;
+    background: var(--c-star);
+    box-shadow: 0 0 10px 0 var(--c-star),
+    0 0 15px 0 var(--c-star);
+    transform: rotate(45deg);
+}
+
+/* TREE MIDDLE */
+#xmas-scene .xmas-tree .tree-middle {
+
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body .part {
+    position: absolute;
+    transform: rotate(45deg);
+
+    padding: 5px;
+    border-bottom-right-radius: 100%;
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body .part.part-one {
+    background-color: var(--c-tree-1);
+    width: var(--d-tree-1);
+    height: var(--d-tree-1);
+    z-index: 100;
+    top: var(--top-tree);
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body .part.part-two {
+    background-color: var(--c-tree-2);
+    width: var(--d-tree-2);
+    height: var(--d-tree-2);
+    z-index: 99;
+    top: calc(var(--top-tree) + 40px);
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body .part.part-three {
+    background-color: var(--c-tree-3);
+    width: var(--d-tree-3);
+    height: var(--d-tree-3);
+    z-index: 98;
+    top: calc(var(--top-tree) + 80px);
+}
+
+#xmas-scene .xmas-tree .tree-middle .tree-body .part.part-four {
+    background-color: var(--c-tree-4);
+    width: var(--d-tree-4);
+    height: var(--d-tree-4);
+    z-index: 97;
+    top: calc(var(--top-tree) + 120px);
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco {
+    position: absolute;
+    width: var(--d-deco);
+    height: var(--d-deco);
+    border-radius: 100%;
+    z-index: 101;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-blue {
+    background-color: var(--c-deco-blue);
+    box-shadow: 0 0 5px 0 var(--c-deco-blue),
+    0 0 10px 0 var(--c-deco-blue),
+    0 0 15px 0 var(--c-deco-blue);
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-red {
+    background-color: var(--c-deco-red);
+    box-shadow: 0 0 5px 0 var(--c-deco-red),
+    0 0 10px 0 var(--c-deco-red),
+    0 0 15px 0 var(--c-deco-red);
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-lime {
+    background-color: var(--c-deco-lime);
+    box-shadow: 0 0 5px 0 var(--c-deco-lime),
+    0 0 10px 0 var(--c-deco-lime),
+    0 0 15px 0 var(--c-deco-lime);
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-yellow {
+    background-color: var(--c-deco-yellow);
+    box-shadow: 0 0 5px 0 var(--c-deco-yellow),
+    0 0 10px 0 var(--c-deco-yellow),
+    0 0 15px 0 var(--c-deco-yellow);
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-purple {
+    background-color: var(--c-deco-purple);
+    box-shadow: 0 0 5px 0 var(--c-deco-purple),
+    0 0 10px 0 var(--c-deco-purple),
+    0 0 15px 0 var(--c-deco-purple);
+}
+
+/* TREE BOTTOM */
+#xmas-scene .xmas-tree .tree-bottom {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    width: 100px;
+    height: 100px;
+    background: var(--c-gift-box);
+    top: calc(calc(var(--top-tree) + 220px) + var(--d-tree-4));
+    cursor: pointer;
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .ribbon {
+    position: absolute;
+    z-index: 201;
+    top:-20px;
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .ribbon:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    left: 50px;
+    z-index: 202;
+    background: var(--c-gift-ribbon);
+    border-radius: 10px 0 10px 0;
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .ribbon:after {
+    content: "";
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    z-index: 202;
+    background: var(--c-gift-ribbon);
+    border-radius: 0 10px 0 10px;
+
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .box {
+    top: calc(calc(var(--top-tree) + 220px) + var(--d-tree-4));
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .box:before {
+    content: "";
+    position: absolute;
+    z-index: 200;
+    width: 33%;
+    left: 33%;
+    height: 100%;
+    background: var(--c-gift-wrapping);
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift .box:after {
+    content: "";
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+    top: 33%;
+    height: 33%;
+    background: var(--c-gift-wrapping);
+}
+
+#xmas-scene .xmas-tree .tree-bottom .trunk {
+    position: absolute;
+    width: 8vw;
+    height: 15vw;
+    max-height: 100px;
+    max-width: 50px;
+    z-index: 96;
+    top: calc(calc(var(--top-tree) + 40px) + var(--d-tree-4));
+    background: -webkit-linear-gradient(90deg, var(--c-trunk-1), var(--c-trunk-2));
+}
+
+@media (min-width: 576px) {
+    body {
+        justify-content: center;
+        background: var(--c-lighter);
+    }
+
+    #xmas-scene:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: var(--top-card);
+        height: calc(100vh - calc(var(--top-card) * 2));
+
+        border: 1px solid var(--c-dark);
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px 0 var(--c-darker);
+        background: var(--c-dark);
+    }
+}

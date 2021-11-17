@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="37.9.175.157" id="ad220c64-a92f-4c36-9a86-8070093b4110" port="22" customName="hrebenarm.tk" nameFormat="CUSTOM" username="admin.hrebenarm.tk">
+        <option name="customName" value="hrebenarm.tk" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

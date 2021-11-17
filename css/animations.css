@@ -1,0 +1,94 @@
+@keyframes deco-animation-yellow {
+    from {
+        box-shadow: 0 0 5px 0 var(--c-deco-yellow),
+        0 0 10px 0 var(--c-deco-yellow),
+        0 0 15px 0 var(--c-deco-yellow);
+    }
+
+    to {
+        box-shadow: 0 0 10px 0 var(--c-deco-yellow),
+        0 0 15px 0 var(--c-deco-yellow),
+        0 0 20px 0 var(--c-deco-yellow);
+    }
+}
+
+@keyframes deco-animation-blue {
+    from {
+        box-shadow: 0 0 5px 0 var(--c-deco-blue),
+        0 0 10px 0 var(--c-deco-blue),
+        0 0 15px 0 var(--c-deco-blue);
+    }
+
+    to {
+        box-shadow: 0 0 10px 0 var(--c-deco-blue),
+        0 0 15px 0 var(--c-deco-blue),
+        0 0 20px 0 var(--c-deco-blue);
+    }
+}
+
+@keyframes deco-animation-lime {
+    from {
+        box-shadow: 0 0 5px 0 var(--c-deco-lime),
+        0 0 10px 0 var(--c-deco-lime),
+        0 0 15px 0 var(--c-deco-lime);
+    }
+
+    to {
+        box-shadow: 0 0 10px 0 var(--c-deco-lime),
+        0 0 15px 0 var(--c-deco-lime),
+        0 0 20px 0 var(--c-deco-lime);
+    }
+}
+
+@keyframes deco-animation-purple {
+    from {
+        box-shadow: 0 0 5px 0 var(--c-deco-purple),
+        0 0 10px 0 var(--c-deco-purple),
+        0 0 15px 0 var(--c-deco-purple);
+    }
+
+    to {
+        box-shadow: 0 0 10px 0 var(--c-deco-purple),
+        0 0 15px 0 var(--c-deco-purple),
+        0 0 20px 0 var(--c-deco-purple);
+    }
+}
+
+@keyframes deco-animation-red {
+    from {
+        box-shadow: 0 0 5px 0 var(--c-deco-red),
+        0 0 10px 0 var(--c-deco-red),
+        0 0 15px 0 var(--c-deco-red);
+    }
+
+    to {
+        box-shadow: 0 0 10px 0 var(--c-deco-red),
+        0 0 15px 0 var(--c-deco-red),
+        0 0 20px 0 var(--c-deco-red);
+    }
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco {
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-blue {
+    animation-name: deco-animation-blue;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-red {
+    animation-name: deco-animation-red;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-lime {
+    animation-name: deco-animation-lime;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-yellow {
+    animation-name: deco-animation-yellow;
+}
+
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-purple {
+    animation-name: deco-animation-purple;
+}
