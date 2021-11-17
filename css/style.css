@@ -230,7 +230,7 @@ body {
 #xmas-scene .xmas-tree .tree-bottom .gift .ribbon {
     position: absolute;
     z-index: 201;
-    top:-20px;
+    top: -20px;
 }
 
 #xmas-scene .xmas-tree .tree-bottom .gift .ribbon:before {
@@ -242,6 +242,10 @@ body {
     z-index: 202;
     background: var(--c-gift-ribbon);
     border-radius: 10px 0 10px 0;
+}
+
+#xmas-scene .xmas-tree .tree-bottom .gift-link {
+    display: contents;
 }
 
 #xmas-scene .xmas-tree .tree-bottom .gift .ribbon:after {
