@@ -16,9 +16,9 @@
     --c-deco-yellow: #dac221;
     --c-deco-purple: #8832e3;
     --c-star: #ffd600;
-    --c-gift-box: #9a9999;
-    --c-gift-wrapping: #797979;
-    --c-gift-ribbon: #c98443;
+    --c-gift-box: #8C489F;
+    --c-gift-wrapping: #F1F0FF;
+    --c-gift-ribbon: #C3C3E5;
 
     --screen-size-coeficient: 0.6;
 
@@ -115,10 +115,6 @@ body {
 }
 
 /* TREE MIDDLE */
-#xmas-scene .xmas-tree .tree-middle {
-
-}
-
 #xmas-scene .xmas-tree .tree-middle .tree-body {
     display: flex;
     flex-flow: column;
@@ -128,7 +124,6 @@ body {
 #xmas-scene .xmas-tree .tree-middle .tree-body .part {
     position: absolute;
     transform: rotate(45deg);
-
     padding: 5px;
     border-bottom-right-radius: 100%;
 }
@@ -208,6 +203,11 @@ body {
     0 0 15px 0 var(--c-deco-purple);
 }
 
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-off {
+    box-shadow: none;
+    opacity: .5;
+}
+
 /* TREE BOTTOM */
 #xmas-scene .xmas-tree .tree-bottom {
     display: flex;
@@ -223,7 +223,7 @@ body {
     width: 100px;
     height: 100px;
     background: var(--c-gift-box);
-    top: calc(calc(var(--top-tree) + 220px) + var(--d-tree-4));
+    top: calc(calc(var(--top-tree) + 180px) + var(--d-tree-4));
     cursor: pointer;
 }
 
@@ -248,6 +248,14 @@ body {
     display: contents;
 }
 
+#xmas-scene .xmas-tree .tree-bottom .gift-hint {
+    position: absolute;
+    z-index: 200;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    top: calc(calc(var(--top-tree) + 140px) + var(--d-tree-4));
+}
+
 #xmas-scene .xmas-tree .tree-bottom .gift .ribbon:after {
     content: "";
     width: 30px;
@@ -257,11 +265,6 @@ body {
     z-index: 202;
     background: var(--c-gift-ribbon);
     border-radius: 0 10px 0 10px;
-
-}
-
-#xmas-scene .xmas-tree .tree-bottom .gift .box {
-    top: calc(calc(var(--top-tree) + 220px) + var(--d-tree-4));
 }
 
 #xmas-scene .xmas-tree .tree-bottom .gift .box:before {

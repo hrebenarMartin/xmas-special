@@ -7,6 +7,7 @@ var screenSizeCoefficient = 1
  * Otherwise show warning message and tree will stay dark
  */
 $(function () {
+    bindLightsToggle()
     resetScreenSizeCoefficient()
 
     let currentTime = new Date()
@@ -37,8 +38,13 @@ function fillTree() {
     // Put star on the tree
     $('#xmas-scene .tree-top').show()
 
-    // Place gift under the tree
+    // Place gift under the tree (but still hidden until all lights are lit)
     $('#xmas-scene .gift').show()
+
+    // Show gift hint (after 10 seconds)
+    setTimeout(function () {
+        $('#xmas-scene .gift-hint').show()
+    }, 10000)
 
     const treeDecoOne = $('.part-one .decors')
     createOrnaments(treeDecoOne, treeOnePositions, 100, 75)
@@ -53,6 +59,9 @@ function fillTree() {
     createOrnaments(treeDecoFour, treeFourPositions)
 }
 
+/**
+ * Shows warning message
+ */
 function showWarningMessage() {
     $('#xmas-scene .title .too-early').show()
 }
@@ -75,6 +84,7 @@ function createOrnaments(treePart, positions, base = 100, truthThreshold = 50) {
             let deco = $('<div></div>')
                 .addClass('deco')
                 .addClass('deco-' + color)
+                .addClass(getRandomBool() ? 'deco-on' : 'deco-off')
                 .css('top', (coords[0] + '%'))
                 .css('left', (coords[1] + '%'))
                 .css('animation-duration', (600 + getRandomNumber(200)) + 'ms')
@@ -93,6 +103,47 @@ function resetScreenSizeCoefficient() {
     const currentScreenWidth = document.documentElement.clientWidth
     screenSizeCoefficient = currentScreenWidth > maxScreenWidth ? 1 : currentScreenWidth / maxScreenWidth
     $('html').attr('style', '--screen-size-coeficient:' + screenSizeCoefficient)
+}
+
+/**
+ * Binds the click event to any element with 'deco' class
+ */
+function bindLightsToggle() {
+    $(function () {
+        $(document).on('click', '.deco', function () {
+            toggleLight($(this))
+        })
+    })
+}
+
+/**
+ * Toggles the light on/off
+ *
+ * @param light jQuery object of the deco element
+ */
+function toggleLight(light) {
+    if (light.hasClass('deco-off')) {
+        light.removeClass('deco-off')
+        light.addClass('deco-on')
+    } else if (light.hasClass('deco-on')) {
+        light.removeClass('deco-on')
+        light.addClass('deco-off')
+    }
+
+    checkAllLightsOn()
+}
+
+/**
+ * Checks if all the lights are lit, if yes, shows the gift
+ */
+function checkAllLightsOn() {
+    let offDecos = $('.deco-off')
+
+    if (offDecos.length)
+        return
+
+    $('.gift-hint').hide()
+    $('.gift-link').show()
 }
 
 /**

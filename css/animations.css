@@ -68,27 +68,27 @@
     }
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-blue {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on.deco-blue {
     animation-name: deco-animation-blue;
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-red {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on.deco-red {
     animation-name: deco-animation-red;
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-lime {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on.deco-lime {
     animation-name: deco-animation-lime;
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-yellow {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on.deco-yellow {
     animation-name: deco-animation-yellow;
 }
 
-#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-purple {
+#xmas-scene .xmas-tree .tree-body .part .decors .deco.deco-on.deco-purple {
     animation-name: deco-animation-purple;
 }
