@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
+/* Variables for whole page ... so most of the magic numbers are stored in one place*/
 :root {
     --c-lighter: #4d4d85;
     --c-dark: #242452;
