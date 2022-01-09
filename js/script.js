@@ -14,7 +14,7 @@ $(function () {
 
     // Christmas period is set between 24th December and 6th January (inclusive)
     if ((currentTime.getMonth() === 11 && currentTime.getDate() > 23) ||
-        (currentTime.getMonth() === 0 && currentTime.getDate() < 7))
+        (currentTime.getMonth() === 0 && currentTime.getDate() < 20))
         fillTree()
     else
         showWarningMessage()
